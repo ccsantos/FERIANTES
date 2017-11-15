@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorRosaDark">#ac4147</color>
+    <color name="colorRosa">#FF4081</color>
+    <color name="colorNegro">#000000</color>
+    <color name="colorBlanco">#FFFFFF</color>
+    <color name="colorVioleta">#411f2d</color>
+</resources>

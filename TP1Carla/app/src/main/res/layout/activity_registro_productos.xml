@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_registro_productos"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/formularios"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.carla.tp1carla.RegistroProductoActivity">
+
+    <TextView
+        android:id="@+id/tituloElija"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="6dp"
+        android:fontFamily="cursive"
+        android:text="Nuevo Producto"
+        android:textColor="@color/colorBlanco"
+        android:textSize="33sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/campoNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:textSize="22sp"
+        android:typeface="sans" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_codigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/campoCodigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:typeface="sans"
+        android:inputType="number"
+        android:hint="Codigo"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_descripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/campoDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:typeface="sans"
+        android:hint="Descripcion"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_precio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/campoPrecio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:typeface="sans"
+        android:inputType="number"
+        android:hint="Precio"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_cantidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/campoCantidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cantidad"
+        android:textSize="22sp"
+        android:inputType="number"
+        android:typeface="sans" />
+    </android.support.design.widget.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/txt_Imagen"
+                android:layout_width="196dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Imagen"
+                android:textSize="22sp"
+                android:typeface="sans" />
+        <Button
+            android:id="@+id/btn_Imagen"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorRosaDark"
+            android:fontFamily="cursive"
+            android:text="Foto"
+            android:textColor="@color/colorBlanco" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_imagen"
+        app:srcCompat="@android:drawable/ic_menu_camera"
+        android:layout_width="364dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.14"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <Button
+        android:id="@+id/btnRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorRosaDark"
+        android:fontFamily="cursive"
+        android:onClick="onClick"
+        android:text="Guardar"
+        android:textColor="@color/colorBlanco"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+</LinearLayout>

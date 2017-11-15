@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gardientsubmenu"
+    tools:context="com.example.carla.tp1carla.MainVentaActivity">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1">
+
+        <TextView
+            android:id="@+id/tituloElija"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:fontFamily="cursive"
+            android:text="Ventas"
+            android:textColor="@color/colorBlanco"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/btnOpcionRegistro"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:background="@color/colorRosaDark"
+            android:fontFamily="cursive"
+            android:onClick="onClick"
+            android:text="Nuevo"
+            android:textColor="@color/colorBlanco"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="38dp"
+            android:layout_below="@+id/tituloElija"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/btnConsultaIndividual"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:background="@color/colorRosaDark"
+            android:fontFamily="cursive"
+            android:onClick="onClick"
+            android:text="Buscar "
+            android:textColor="@color/colorBlanco"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="18dp"
+            android:layout_below="@+id/btnOpcionRegistro"
+            android:layout_alignLeft="@+id/btnOpcionRegistro"
+            android:layout_alignStart="@+id/btnOpcionRegistro" />
+
+        <Button
+            android:id="@+id/btnConsultaLista"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:background="@color/colorRosaDark"
+            android:fontFamily="cursive"
+            android:onClick="onClick"
+            android:text="Ventas"
+            android:textColor="@color/colorBlanco"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_below="@+id/btnConsultaIndividual"
+            android:layout_alignLeft="@+id/btnConsultaIndividual"
+            android:layout_alignStart="@+id/btnConsultaIndividual"
+            android:layout_marginTop="22dp" />
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

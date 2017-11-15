@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Feriantes</string>
+    <string name="eliminar_titulo">Eliminar</string>
+    <string name="eliminar_mensaje">¿Desea eliminar el producto?</string>
+    <string name="eliminar_confirmacion">Producto eliminado</string>
+    <string name="actualizar_titulo">Actualizar</string>
+    <string name="actualizar_mensaje">¿Desea guardar cambios del producto?</string>
+</resources>

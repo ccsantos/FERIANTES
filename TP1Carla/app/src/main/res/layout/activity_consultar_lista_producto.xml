@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_consultar_lista_producto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/formularios"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.carla.tp1carla.ConsultarListaProductoActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <CheckBox
+                android:id="@+id/ckb_codigo"
+                android:layout_width="wrap_content"
+                android:layout_height="47dp" />
+
+            <EditText
+                android:id="@+id/txt_codigo"
+                android:layout_width="118dp"
+                android:layout_height="wrap_content"
+                android:hint="Codigo"
+                android:inputType="number" />
+
+            <CheckBox
+                android:id="@+id/ckb_nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp" />
+
+            <EditText
+                android:id="@+id/txt_nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_buscar"
+                android:layout_width="68dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.27"
+                android:background="@color/colorRosaDark"
+                android:fontFamily="cursive"
+                android:text="Buscar"
+                android:textColor="@color/colorBlanco" />
+
+            <Button
+                android:id="@+id/btn_cancelar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorRosaDark"
+                android:fontFamily="cursive"
+                android:text="Cancelar"
+                android:textColor="@color/colorBlanco"
+                android:layout_weight="0.21" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tituloElija"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="7dp"
+            android:layout_weight="1"
+            android:fontFamily="cursive"
+            android:text="Listado Productos"
+            android:textColor="@color/colorBlanco"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:typeface="sans" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <ListView
+            android:layout_marginTop="10dp"
+            android:id="@+id/listViewProductos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</LinearLayout>
