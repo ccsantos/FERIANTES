@@ -80,11 +80,9 @@ public class RegistroProductoActivity extends AppCompatActivity {
             Toast.makeText(this, "Ingresar Cantidad! ", Toast.LENGTH_SHORT).show();
             return;
         }
-        //values.put(Utilidades.CAMPO_IDPRODUCTO,campoId.getText().toString());
         values.put(Utilidades.CAMPO_NOMBREP,campoNombre.getText().toString());
         values.put(Utilidades.CAMPO_CODIGO,campoCodigo.getText().toString());
         values.put(Utilidades.CAMPO_DESCRIPCION,campoDescripcion.getText().toString());
-        // values.put(Utilidades.CAMPO_IMAGEN,campoImagen.getText().toString());
         values.put(Utilidades.CAMPO_PRECIO,campoPrecio.getText().toString());
         values.put(Utilidades.CAMPO_CANTIDAD_P,campoCantidad.getText().toString());
         if (saco_foto){

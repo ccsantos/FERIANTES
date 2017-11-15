@@ -13,27 +13,22 @@ import com.example.carla.tp1carla.entidades.Producto;
  */
 
 public class DetalleProductoActivity extends AppCompatActivity {
-
     TextView campoId, campoNombre, campoCodigo,campoDescripcion,campoPrecio, campoCantidad;
     ImageView campoImagen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_producto);
-
         campoId = (TextView) findViewById(R.id.campoId);
         campoNombre = (TextView) findViewById(R.id.campoNombre);
         campoCodigo = (TextView) findViewById(R.id.campoCodigo);
         campoDescripcion=(TextView)findViewById(R.id.campoDescripcion);
         campoPrecio=(TextView)findViewById(R.id.campoPrecio);
         campoCantidad=(TextView)findViewById(R.id.campoCantidad);
-        //campoImagen = (ImageView)findViewById(R.id.campoImagen);
-//        campoImagen = (ImageView) findViewById(R.id.iv_imagen);
+        campoImagen = (ImageView)findViewById(R.id.campoImagen);
 
         Bundle objetoEnviado=getIntent().getExtras();
-
         Producto producto=null;
-
         if(objetoEnviado!=null){
             producto= (Producto) objetoEnviado.getSerializable("producto");
             campoId.setText(producto.getIdP().toString());
@@ -42,9 +37,8 @@ public class DetalleProductoActivity extends AppCompatActivity {
             campoDescripcion.setText(producto.getDescripcion().toString());
             campoPrecio.setText(producto.getPrecio().toString());
             campoCantidad.setText(producto.getCantidad().toString());
-            if (producto.getImagen() != null){
-                //Pasando byte array a bitmap
-                byte[] bitmapdata = producto.getImagen(); // let this be your byte array
+            if (producto.getImagenP() != null){
+                byte[] bitmapdata = producto.getImagenP(); // let this be your byte array
                 Bitmap bitmap = BitmapFactory.decodeByteArray(bitmapdata , 0, bitmapdata .length);
                 campoImagen.setImageBitmap(bitmap);
                 campoImagen.setVisibility(View.VISIBLE);
@@ -52,4 +46,3 @@ public class DetalleProductoActivity extends AppCompatActivity {
         }
     }
 }
-

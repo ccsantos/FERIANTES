@@ -6,13 +6,11 @@ package com.example.carla.tp1carla.entidades;
 import java.io.Serializable;
 
 public class Producto implements Serializable {
-
     private Integer idP;
     private String nombreP;
     private Integer codigo;
     private String descripcion;
-    // private Blob imagen;
-    private byte[] imagen;
+    private byte[] imagenP;
     private Double precio;
     private Integer cantidad;
 
@@ -20,12 +18,12 @@ public class Producto implements Serializable {
     public Producto() {
     }
 
-    public Producto(Integer idP, String nombreP, Integer codigo, String descripcion, byte[] imagen,Double precio, Integer cantidad) {
+    public Producto(Integer idP, String nombreP, Integer codigo, String descripcion, byte[] imagenP,Double precio, Integer cantidad) {
         this.idP = idP;
         this.nombreP = nombreP;
         this.codigo = codigo;
         this.descripcion = descripcion;
-        this.imagen = imagen;
+        this.imagenP = imagenP;
         this.precio = precio;
         this.cantidad = cantidad;
     }
@@ -78,11 +76,11 @@ public class Producto implements Serializable {
         this.cantidad = cantidad;
     }
 
-    public byte[] getImagen() {
-        return imagen;
+    public byte[] getImagenP() {
+        return imagenP;
     }
 
-    public void setImagen(byte[] imagen) {
-        this.imagen = imagen;
+    public void setImagenP(byte[] imagenP) {
+        this.imagenP = imagenP;
     }
 }

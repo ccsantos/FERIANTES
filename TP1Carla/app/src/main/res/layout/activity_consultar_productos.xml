@@ -24,7 +24,6 @@
         android:textSize="30sp"
         android:textStyle="bold"
         android:typeface="sans" />
-
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
@@ -38,7 +37,6 @@
             android:hint="Codigo"
             android:inputType="number"
             android:layout_weight="1.05" />
-
         <Button
             android:id="@+id/btnConsultar"
             android:layout_width="wrap_content"
@@ -49,7 +47,6 @@
             android:text="Buscar"
             android:textColor="@color/colorBlanco" />
     </LinearLayout>
-
     <LinearLayout
         android:id="@+id/linearLayoutC"
         android:layout_width="match_parent"
@@ -69,7 +66,6 @@
             android:textSize="30sp"
             android:textStyle="bold"
             android:typeface="sans" />
-
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_nombre"
             android:layout_width="match_parent"
@@ -78,7 +74,8 @@
             android:id="@+id/campoNombreConsulta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre" />
+            android:hint="Nombre"
+            android:inputType="text"/>
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_descipcion"
@@ -88,7 +85,8 @@
             android:id="@+id/campoDescripcionConsulta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Descripcion" />
+            android:hint="Descripcion"
+            android:inputType="text"/>
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_precio"
@@ -99,7 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Precio"
-            android:inputType="number"/>
+            android:inputType="numberDecimal"/>
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_cantidad"
@@ -126,7 +124,6 @@
             android:textColor="@color/colorBlanco"
             android:textSize="18sp"
             android:textStyle="bold" />
-
         <Button
             android:id="@+id/btnEliminar"
             android:layout_width="match_parent"

@@ -20,7 +20,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="1">
-
             <CheckBox
                 android:id="@+id/ckb_codigo"
                 android:layout_width="wrap_content"
@@ -37,49 +36,41 @@
                 android:id="@+id/ckb_nombre"
                 android:layout_width="wrap_content"
                 android:layout_height="46dp" />
-
             <EditText
                 android:id="@+id/txt_nombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nombre"
-                android:inputType="textPersonName" />
-
+                android:inputType="text" />
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
             <Button
                 android:id="@+id/btn_buscar"
-                android:layout_width="68dp"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.27"
+                android:layout_weight="0.20"
                 android:background="@color/colorRosaDark"
                 android:fontFamily="cursive"
                 android:text="Buscar"
                 android:textColor="@color/colorBlanco" />
-
             <Button
                 android:id="@+id/btn_cancelar"
-                android:layout_width="wrap_content"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:background="@color/colorRosaDark"
                 android:fontFamily="cursive"
                 android:text="Cancelar"
                 android:textColor="@color/colorBlanco"
-                android:layout_weight="0.21" />
+                android:layout_weight="0.19" />
         </LinearLayout>
-
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
         <TextView
             android:id="@+id/tituloElija"
             android:layout_width="match_parent"
@@ -107,5 +98,4 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
-
 </LinearLayout>

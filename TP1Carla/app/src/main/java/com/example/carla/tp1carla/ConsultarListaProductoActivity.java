@@ -20,7 +20,6 @@ import java.util.ArrayList;
 /**
  * Created by Carla on 12/11/2017.
  */
-
 import com.example.carla.tp1carla.entidades.Producto;
 import com.example.carla.tp1carla.utilidades.Utilidades;
 
@@ -34,14 +33,12 @@ public class ConsultarListaProductoActivity extends AppCompatActivity {
     ListView listViewProductos;
     ArrayList<String> listaInformacion;
     ArrayList<Producto> listaProductos;
-
     ConexionSQLiteHelper conn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consultar_lista_producto);
-
         btnBuscar = (Button) findViewById(R.id.btn_buscar);
         btnCancelar = (Button) findViewById(R.id.btn_cancelar);
         campoNombre = (EditText) findViewById(R.id.txt_nombre);
@@ -51,32 +48,25 @@ public class ConsultarListaProductoActivity extends AppCompatActivity {
         ckbNombre.setChecked(false);
         ckbCodigo.setChecked(false);
         listViewProductos = (ListView) findViewById(R.id.listViewProductos);
-
         conn = new ConexionSQLiteHelper(getApplicationContext(), "bd_feriantes", null, 1);
-
         consultarListaProductos();
-
         ckbNombre.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View v){
                 limpiar();
-
             }
         });
-
         ckbCodigo.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View v){
                 limpiar();
             }
         });
-
         btnBuscar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View v){
                 if (ckbNombre.isChecked()){
                     consultarPorNombreProductos();
-
                 }
                 else if (ckbCodigo.isChecked()){
                     consultarPorCodigoProductos();
@@ -96,7 +86,6 @@ public class ConsultarListaProductoActivity extends AppCompatActivity {
             }
         });
 
-        //PARA PODER TOCAR LA LISTA
         listViewProductos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {
@@ -130,7 +119,7 @@ public class ConsultarListaProductoActivity extends AppCompatActivity {
             producto.setDescripcion(cursor.getString(3));
             producto.setPrecio(cursor.getDouble(4));
             producto.setCantidad(cursor.getInt(5));
-            //producto.setImagen(cursor.getBlob(6));
+            producto.setImagenP(cursor.getBlob(6));
             listaProductos.add(producto);
         }
         obtenerLista();
@@ -142,7 +131,7 @@ public class ConsultarListaProductoActivity extends AppCompatActivity {
         Producto producto = null;
         SQLiteDatabase db = conn.getReadableDatabase();
         String[] parametros={campoCodigo.getText().toString()};
-        String[] campos={Utilidades.CAMPO_IDPRODUCTO,Utilidades.CAMPO_NOMBREP,Utilidades.CAMPO_CODIGO,Utilidades.CAMPO_DESCRIPCION,Utilidades.CAMPO_PRECIO,Utilidades.CAMPO_CANTIDAD_P};
+        String[] campos={Utilidades.CAMPO_IDPRODUCTO,Utilidades.CAMPO_NOMBREP,Utilidades.CAMPO_CODIGO,Utilidades.CAMPO_DESCRIPCION,Utilidades.CAMPO_PRECIO,Utilidades.CAMPO_CANTIDAD_P,Utilidades.CAMPO_IMAGEN};
         listaProductos = new ArrayList<Producto>();
         Cursor cursor =db.query(Utilidades.TABLA_PRODUCTO,campos, Utilidades.CAMPO_CODIGO+"=?",parametros,null,null,null);
         while(cursor.moveToNext()){
@@ -153,6 +142,7 @@ public class ConsultarListaProductoActivity extends AppCompatActivity {
             producto.setDescripcion(cursor.getString(3));
             producto.setPrecio(cursor.getDouble(4));
             producto.setCantidad(cursor.getInt(5));
+            producto.setImagenP(cursor.getBlob(6));
             listaProductos.add(producto);
         }
         obtenerLista();
@@ -164,7 +154,7 @@ public class ConsultarListaProductoActivity extends AppCompatActivity {
         Producto producto = null;
         SQLiteDatabase db = conn.getReadableDatabase();
         String[] parametros={campoNombre.getText().toString()};
-        String[] campos={Utilidades.CAMPO_IDPRODUCTO,Utilidades.CAMPO_NOMBREP,Utilidades.CAMPO_CODIGO,Utilidades.CAMPO_DESCRIPCION,Utilidades.CAMPO_PRECIO,Utilidades.CAMPO_CANTIDAD_P};
+        String[] campos={Utilidades.CAMPO_IDPRODUCTO,Utilidades.CAMPO_NOMBREP,Utilidades.CAMPO_CODIGO,Utilidades.CAMPO_DESCRIPCION,Utilidades.CAMPO_PRECIO,Utilidades.CAMPO_CANTIDAD_P,Utilidades.CAMPO_IMAGEN};
         listaProductos = new ArrayList<Producto>();
         Cursor cursor =db.query(Utilidades.TABLA_PRODUCTO,campos, Utilidades.CAMPO_NOMBREP+"=?",parametros,null,null,null);
         while(cursor.moveToNext()){
@@ -175,6 +165,7 @@ public class ConsultarListaProductoActivity extends AppCompatActivity {
             producto.setDescripcion(cursor.getString(3));
             producto.setPrecio(cursor.getDouble(4));
             producto.setCantidad(cursor.getInt(5));
+            producto.setImagenP(cursor.getBlob(6));
             listaProductos.add(producto);
         }
         obtenerLista();
