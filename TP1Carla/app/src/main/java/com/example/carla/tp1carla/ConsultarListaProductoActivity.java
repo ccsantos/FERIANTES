@@ -1,5 +1,4 @@
 package com.example.carla.tp1carla;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -14,7 +13,6 @@ import android.widget.Toast;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-
 import java.util.ArrayList;
 
 /**
@@ -117,7 +115,7 @@ public class ConsultarListaProductoActivity extends AppCompatActivity {
             producto.setNombreP(cursor.getString(1));
             producto.setCodigo(cursor.getInt(2));
             producto.setDescripcion(cursor.getString(3));
-            producto.setPrecio(cursor.getDouble(4));
+            producto.setPrecio(cursor.getFloat(4));
             producto.setCantidad(cursor.getInt(5));
             producto.setImagenP(cursor.getBlob(6));
             listaProductos.add(producto);
@@ -140,7 +138,7 @@ public class ConsultarListaProductoActivity extends AppCompatActivity {
             producto.setNombreP(cursor.getString(1));
             producto.setCodigo(cursor.getInt(2));
             producto.setDescripcion(cursor.getString(3));
-            producto.setPrecio(cursor.getDouble(4));
+            producto.setPrecio(cursor.getFloat(4));
             producto.setCantidad(cursor.getInt(5));
             producto.setImagenP(cursor.getBlob(6));
             listaProductos.add(producto);
@@ -163,7 +161,7 @@ public class ConsultarListaProductoActivity extends AppCompatActivity {
             producto.setNombreP(cursor.getString(1));
             producto.setCodigo(cursor.getInt(2));
             producto.setDescripcion(cursor.getString(3));
-            producto.setPrecio(cursor.getDouble(4));
+            producto.setPrecio(cursor.getFloat(4));
             producto.setCantidad(cursor.getInt(5));
             producto.setImagenP(cursor.getBlob(6));
             listaProductos.add(producto);

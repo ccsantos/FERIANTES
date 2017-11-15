@@ -26,9 +26,8 @@ public class MainActivity extends AppCompatActivity {
                 toastP.setGravity(Gravity.TOP,0,0);
                 toastP.show();
                 break;
-
             case R.id.btnVentas:
-               // miIntent=new Intent(MainActivity.this,MainVentaActivity.class);
+                miIntent=new Intent(MainActivity.this,MainVentaActivity.class);
                 Toast toastV= Toast.makeText(this, "Menu Ventas", Toast.LENGTH_SHORT);
                 toastV.setGravity(Gravity.TOP,0,0);
                 toastV.show();

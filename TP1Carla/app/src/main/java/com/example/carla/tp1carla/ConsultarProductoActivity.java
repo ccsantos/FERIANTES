@@ -12,10 +12,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 import com.example.carla.tp1carla.utilidades.Utilidades;
 
-/**
- * Created by Carla on 12/11/2017.
- */
-
 public class ConsultarProductoActivity extends AppCompatActivity {
     EditText campoIdP,campoNombre,campoCodigo,campoDescripcion,campoPrecio, campoCantidad;
     ConexionSQLiteHelper conn;
@@ -27,7 +23,6 @@ public class ConsultarProductoActivity extends AppCompatActivity {
 
         conn=new ConexionSQLiteHelper(getApplicationContext(),"bd_feriantes",null,1);
 
-        //campoIdP= (EditText) findViewById(R.id.campoIdPConsulta);
         campoNombre= (EditText) findViewById(R.id.campoNombreConsulta);
         campoCodigo= (EditText) findViewById(R.id.campoCodigoConsulta);
         campoDescripcion= (EditText) findViewById(R.id.campoDescripcionConsulta);
@@ -91,9 +86,7 @@ public class ConsultarProductoActivity extends AppCompatActivity {
 
     private void consultar() {
         SQLiteDatabase db=conn.getReadableDatabase();
-        //CAMPOS POR EL QUE QUIERO BUSCAR
         String[] parametros={campoCodigo.getText().toString()};
-        //CAMPOS QUE ME DEVUELVE
         String[] campos={Utilidades.CAMPO_NOMBREP,Utilidades.CAMPO_DESCRIPCION,Utilidades.CAMPO_PRECIO,Utilidades.CAMPO_CANTIDAD_P};
         try {
             Cursor cursor =db.query(Utilidades.TABLA_PRODUCTO,campos, Utilidades.CAMPO_CODIGO+"=?",parametros,null,null,null);
@@ -110,7 +103,6 @@ public class ConsultarProductoActivity extends AppCompatActivity {
     }
 
     private void limpiar() {
-        //campoIdP.setText("");
         campoNombre.setText("");
         campoCodigo.setText("");
         campoDescripcion.setText("");
@@ -119,7 +111,6 @@ public class ConsultarProductoActivity extends AppCompatActivity {
     }
     private void limpiarE() {
         campoNombre.setText("");
-        //campoCodigo.setText("");
         campoDescripcion.setText("");
         campoPrecio.setText("");
         campoCantidad.setText("");

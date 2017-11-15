@@ -13,18 +13,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.text.TextUtils;
 import android.widget.ImageView;
-
 import java.io.ByteArrayOutputStream;
 
-/**
- * Created by Carla on 12/11/2017.
- */
-
 public class RegistroProductoActivity extends AppCompatActivity {
-
-    EditText campoIma,campoId,campoNombre,campoCodigo,campoDescripcion, campoPrecio,campoCantidad;
+    EditText campoIma,campoNombre,campoCodigo,campoDescripcion, campoPrecio,campoCantidad;
     ImageView campoImagen;
-    String mensaje;
     Button btnImg;
     boolean saco_foto;
     Bitmap bMap;
@@ -33,14 +26,11 @@ public class RegistroProductoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_productos);
-
-        //campoId= (EditText) findViewById(R.id.campoId);
         campoNombre= (EditText) findViewById(R.id.campoNombre);
         campoCantidad= (EditText) findViewById(R.id.campoCantidad);
         campoCodigo= (EditText) findViewById(R.id.campoCodigo);
         campoDescripcion= (EditText) findViewById(R.id.campoDescripcion);
         campoPrecio= (EditText) findViewById(R.id.campoPrecio);
-
         campoIma = (EditText) findViewById(R.id.txt_Imagen);
         btnImg = (Button) findViewById(R.id.btn_Imagen);
         campoImagen = (ImageView) findViewById(R.id.iv_imagen);
@@ -104,7 +94,6 @@ public class RegistroProductoActivity extends AppCompatActivity {
     }
 
     private void limpiar() {
-        //campoId.setText("");
         campoNombre.setText("");
         campoCodigo.setText("");
         campoDescripcion.setText("");
@@ -118,12 +107,7 @@ public class RegistroProductoActivity extends AppCompatActivity {
             saco_foto = true;
             Bundle extras = data.getExtras();
             bMap = (Bitmap) extras.get("data");
-            //Añadimos el bitmap al imageView para
-            // mostrarlo por pantalla
             campoImagen.setImageBitmap(bMap);
-
         }
     }
-
-
 }

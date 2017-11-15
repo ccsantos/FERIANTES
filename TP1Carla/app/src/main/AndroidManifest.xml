@@ -20,11 +20,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegistroProductoActivity" />
+        <activity android:name=".RegistroVentaActivity" />
         <activity android:name=".ConsultarProductoActivity" />
         <activity android:name=".ConsultarListaProductoActivity" />
+        <activity android:name=".ConsultarListaVentaActivity" />
         <activity android:name=".DetalleProductoActivity" />
+        <activity android:name=".DetalleVentaActivity" />
         <activity android:name=".MainProductoActivity" />
-
+        <activity android:name=".MainVentaActivity" />
     </application>
 
 </manifest>

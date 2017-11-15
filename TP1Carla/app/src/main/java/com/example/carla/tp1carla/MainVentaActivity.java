@@ -7,16 +7,15 @@ import android.view.View;
 
 /**
  * Created by Carla on 12/11/2017.
-
+ */
 
 public class MainVentaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
-
-        ConexionSQLiteHelper conn=new ConexionSQLiteHelper(this,"bd_usuarios",null,1);
+        setContentView(R.layout.activity_main_venta);
+        ConexionSQLiteHelper conn=new ConexionSQLiteHelper(this,"base_feriantes",null,1);
     }
 
     public void onClick(View view) {
@@ -24,9 +23,6 @@ public class MainVentaActivity extends AppCompatActivity {
         switch (view.getId()){
             case R.id.btnOpcionRegistro:
                 miIntent=new Intent(MainVentaActivity.this,RegistroVentaActivity.class);
-                break;
-            case R.id.btnConsultaIndividual:
-                miIntent=new Intent(MainVentaActivity.this,ConsultarVentaActivity.class);
                 break;
             case R.id.btnConsultaLista:
                 miIntent=new Intent(MainVentaActivity.this,ConsultarListaVentaActivity.class);
@@ -36,6 +32,4 @@ public class MainVentaActivity extends AppCompatActivity {
             startActivity(miIntent);
         }
     }
-} {
 }
- */

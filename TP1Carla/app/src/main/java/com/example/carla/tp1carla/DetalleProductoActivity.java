@@ -8,9 +8,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.carla.tp1carla.entidades.Producto;
-/**
- * Created by Carla on 12/11/2017.
- */
 
 public class DetalleProductoActivity extends AppCompatActivity {
     TextView campoId, campoNombre, campoCodigo,campoDescripcion,campoPrecio, campoCantidad;
