@@ -8,8 +8,10 @@ package com.example.carla.tp1carla;
 */
 import android.app.DatePickerDialog;
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.support.v4.media.MediaMetadataCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import com.example.carla.tp1carla.entidades.Producto;
 import com.example.carla.tp1carla.entidades.Venta;
@@ -38,6 +40,7 @@ public class RegistroVentaActivity extends AppCompatActivity {
     EditText campoCantidadV;
     EditText campoFecha;
     Integer campoIDP;
+    Integer campoCantidadActualizada;
     private Spinner cmbProductos;
     private Button btnFecha;
     private int campoDia, campoMes, campoAno;
@@ -219,16 +222,25 @@ public class RegistroVentaActivity extends AppCompatActivity {
             pro.setCantidad(pro.getCantidad() - txtstock);
 
             campoIDP=pro.getIdP();
+            String campoNombre = pro.getNombreP();
+            Integer campoCodigo = pro.getCodigo();
+            String campoDescrip = pro.getDescripcion();
+            Float campoPre = pro.getPrecio();
+
+            campoCantidadActualizada = pro.getCantidad();
+
             precioFinal = precio * txtstock;
+            //inserto en la base
             ContentValues values = new ContentValues();
             values.put(Utilidades.CAMPO_FECHAVENTA, campoFecha.getText().toString());
             values.put(Utilidades.CAMPO_CANTIDAD_V, campoCantidadV.getText().toString());
             values.put(Utilidades.CAMPO_MONTO, campoMonto.getText().toString());
             values.put(Utilidades.CAMPO_ID_PRODUCTO,campoIDP);
-           // ContentValues v2 = new ContentValues();
-           // v2.put(Utilidades.CAMPO_IDPRODUCTO,);
             Long idResultante = db.insert(Utilidades.TABLA_VENTA, Utilidades.CAMPO_IDVENTA, values);
-            //db.update(Utilidades.TABLA_PRODUCTO,Utilidades.CAMPO_CANTIDAD_P,);
+            String[] campo = new String[] {String.valueOf(campoIDP)};
+            ContentValues v2 = new ContentValues();
+            v2.put(Utilidades.CAMPO_CANTIDAD_P,campoCantidadActualizada);
+            db.update(Utilidades.TABLA_PRODUCTO,v2,Utilidades.CAMPO_IDPRODUCTO+"=?",campo);
             if (idResultante != -1) {
                 Toast.makeText(getApplicationContext(), "Venta: " + idResultante + " guardada! ", Toast.LENGTH_SHORT).show();
                 limpiar();

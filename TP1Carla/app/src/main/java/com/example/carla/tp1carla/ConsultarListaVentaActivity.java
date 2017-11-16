@@ -110,7 +110,7 @@ public class ConsultarListaVentaActivity extends AppCompatActivity {
             venta = new Venta();
             venta.setIdVenta(cursor.getInt(0));
             //ver como se obtiene el campo date con el cursor
-            // venta.setFechaVenta(cursor.getring(1));
+            //venta.setFechaVenta(Datecursor.getLong(1));
             venta.setCantidadV(cursor.getInt(2));
             venta.setId_Producto(cursor.getInt(3));
             venta.setMontoTotal(cursor.getFloat(4));
