@@ -30,6 +30,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -58,6 +60,7 @@ public class RegistroVentaActivity extends AppCompatActivity {
         campoMonto = (EditText) findViewById(R.id.campoMonto);
         campoFecha = (EditText) findViewById(R.id.campoFecha);
         cmbProductos = (Spinner) findViewById(R.id.cmb_productos);
+
         btnFecha = (Button) findViewById(R.id.btn_fecha);
         ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "bd_feriantes", null, 1);
         listViewProductos = (ListView) findViewById(R.id.listViewProductos);
@@ -222,25 +225,24 @@ public class RegistroVentaActivity extends AppCompatActivity {
             pro.setCantidad(pro.getCantidad() - txtstock);
 
             campoIDP=pro.getIdP();
-            String campoNombre = pro.getNombreP();
-            Integer campoCodigo = pro.getCodigo();
-            String campoDescrip = pro.getDescripcion();
-            Float campoPre = pro.getPrecio();
-
+            Date campoF = venta.getFechaVenta();
+            //Integer campoCantV = venta.getCantidadV();
             campoCantidadActualizada = pro.getCantidad();
-
             precioFinal = precio * txtstock;
+
             //inserto en la base
             ContentValues values = new ContentValues();
-            values.put(Utilidades.CAMPO_FECHAVENTA, campoFecha.getText().toString());
-            values.put(Utilidades.CAMPO_CANTIDAD_V, campoCantidadV.getText().toString());
-            values.put(Utilidades.CAMPO_MONTO, campoMonto.getText().toString());
+            values.put(Utilidades.CAMPO_FECHAVENTA, campoF.toString());
+            values.put(Utilidades.CAMPO_MONTO, precioFinal);
+            values.put(Utilidades.CAMPO_CANTIDAD_V,venta.getCantidadV());
             values.put(Utilidades.CAMPO_ID_PRODUCTO,campoIDP);
             Long idResultante = db.insert(Utilidades.TABLA_VENTA, Utilidades.CAMPO_IDVENTA, values);
+
             String[] campo = new String[] {String.valueOf(campoIDP)};
             ContentValues v2 = new ContentValues();
             v2.put(Utilidades.CAMPO_CANTIDAD_P,campoCantidadActualizada);
             db.update(Utilidades.TABLA_PRODUCTO,v2,Utilidades.CAMPO_IDPRODUCTO+"=?",campo);
+
             if (idResultante != -1) {
                 Toast.makeText(getApplicationContext(), "Venta: " + idResultante + " guardada! ", Toast.LENGTH_SHORT).show();
                 limpiar();

@@ -13,8 +13,8 @@ public class DetalleVentaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detalle_venta);
         campoIdV = (TextView) findViewById(R.id.campoIdV);
         campoFecha = (TextView) findViewById(R.id.campoFecha);
-        campoCantidad = (TextView) findViewById(R.id.campoCantidad);
         campoMonto=(TextView)findViewById(R.id.campoMonto);
+        campoCantidad = (TextView) findViewById(R.id.campoCantidad);
         campoIdp=(TextView)findViewById(R.id.campoIdp);
 
         Bundle objetoEnviado=getIntent().getExtras();
@@ -23,15 +23,9 @@ public class DetalleVentaActivity extends AppCompatActivity {
             venta= (Venta) objetoEnviado.getSerializable("venta");
             campoIdV.setText(venta.getIdVenta().toString());
             campoFecha.setText(venta.getFechaVenta().toString());
-            campoCantidad.setText(venta.getCantidadV().toString());
             campoMonto.setText(venta.getMontoTotal().toString());
+            campoCantidad.setText(venta.getCantidadV().toString());
             campoIdp.setText(venta.getId_Producto().toString());
-             /*if (producto.getImagenP() != null){
-                byte[] bitmapdata = producto.getImagenP(); // let this be your byte array
-                Bitmap bitmap = BitmapFactory.decodeByteArray(bitmapdata , 0, bitmapdata .length);
-                campoImagen.setImageBitmap(bitmap);
-                campoImagen.setVisibility(View.VISIBLE);
-            }*/
         }
     }
 }

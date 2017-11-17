@@ -17,6 +17,8 @@ import com.example.carla.tp1carla.entidades.Producto;
 import com.example.carla.tp1carla.entidades.Venta;
 import com.example.carla.tp1carla.utilidades.Utilidades;
 import java.util.ArrayList;
+import java.util.Date;
+
 public class ConsultarListaVentaActivity extends AppCompatActivity {
     private Button btnBuscar;
     private Button btnCancelar;
@@ -60,10 +62,9 @@ public class ConsultarListaVentaActivity extends AppCompatActivity {
             @Override
             public void onClick (View v){
                 if (ckbFecha.isChecked()){
-                    consultarPorFechaVentas();
+                    //consultarPorFechaVentas();
                 }
                 else if (ckbIdp.isChecked()){
-                    //FALTA HACERLO
                     // consultarPorCodigoProductos();
                 }
                 limpiar();
@@ -110,12 +111,11 @@ public class ConsultarListaVentaActivity extends AppCompatActivity {
             venta = new Venta();
             venta.setIdVenta(cursor.getInt(0));
             //ver como se obtiene el campo date con el cursor
-            //venta.setFechaVenta(Datecursor.getLong(1));
-            venta.setCantidadV(cursor.getInt(2));
-            venta.setId_Producto(cursor.getInt(3));
-            venta.setMontoTotal(cursor.getFloat(4));
-            //producto.setCantidad(cursor.getInt(5));
-            //producto.setImagenP(cursor.getBlob(6));
+            //venta.setFechaVenta(cursor.getString(1));
+           // venta.setFechaVenta((loadDate(cursor, campoFecha)));
+            venta.setMontoTotal(cursor.getFloat(2));
+            venta.setCantidadV(cursor.getInt(3));
+            venta.setId_Producto(cursor.getInt(4));
             listaVentas.add(venta);
         }
         obtenerLista();
@@ -145,7 +145,7 @@ public class ConsultarListaVentaActivity extends AppCompatActivity {
         ArrayAdapter adaptador = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listaInformacion);
         listViewProductos.setAdapter(adaptador);
     }
-*/
+*//*
     private void consultarPorFechaVentas() {
         Venta venta = null;
         SQLiteDatabase db = conn.getReadableDatabase();
@@ -158,24 +158,23 @@ public class ConsultarListaVentaActivity extends AppCompatActivity {
             venta.setId_Producto(cursor.getInt(0));
             //ver como obbtengo el campo fecha con el cursor
             // venta.setFechaVenta(cursor.getString(1));
-            venta.setMontoTotal(cursor.getFloat(2));
-            venta.setCantidadV(cursor.getInt(3));
+            venta.setCantidadV(cursor.getInt(2));
+            venta.setMontoTotal(cursor.getFloat(3));
             venta.setId_Producto(cursor.getInt(4));
-            //producto.setImagenP(cursor.getBlob(6));
             listaVentas.add(venta);
         }
         obtenerLista();
         ArrayAdapter adaptador = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listaInformacion);
         listViewVentas.setAdapter(adaptador);
     }
-
+*/
     private void obtenerLista() {
         listaInformacion = new ArrayList<String>();
         for (int i = 0; i < listaVentas.size(); i++) {
             listaInformacion.add(listaVentas.get(i).getIdVenta() + " - Fecha: "
                     + listaVentas.get(i).getFechaVenta() + " - Cantidad: "
-                    + listaVentas.get(i).getCantidadV() + " - $: "
-                    + listaVentas.get(i).getMontoTotal() + " - Nombre Prod: "
+                    + listaVentas.get(i).getCantidadV() + " - Monto: "
+                    + listaVentas.get(i).getMontoTotal() + " - Id Prod: "
                     + listaVentas.get(i).getId_Producto());
         }
         if (listaVentas.isEmpty()){
@@ -184,7 +183,6 @@ public class ConsultarListaVentaActivity extends AppCompatActivity {
             toastV.show();
         }
     }
-
     private void limpiar() {
         campoFecha.setText("");
         campoIdp.setText("");

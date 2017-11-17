@@ -9,12 +9,20 @@ import java.util.Date;
 
 public class Venta implements Serializable {
     private Integer idVenta;
-    private Date fechaVenta;
+    private java.util.Date fechaVenta;
     private Float montoTotal;
     private Integer cantidadV;
-    private Integer id_Producto; //es idDuenio
+    private Integer id_Producto;
 
     public Venta(){}
+
+    public Date getFechaVenta() {
+        return fechaVenta;
+    }
+
+    public void setFechaVenta(Date fechaVenta) {
+        this.fechaVenta = fechaVenta;
+    }
 
     public Venta(Integer idVenta, Date fechaVenta, Float montoTotal, Integer cantidadV, Integer id_Producto) {
         this.idVenta = idVenta;
@@ -30,14 +38,6 @@ public class Venta implements Serializable {
 
     public void setIdVenta(Integer idVenta) {
         this.idVenta = idVenta;
-    }
-
-    public Date getFechaVenta() {
-        return fechaVenta;
-    }
-
-    public void setFechaVenta(Date fechaVenta) {
-        this.fechaVenta = fechaVenta;
     }
 
     public Float getMontoTotal() {
